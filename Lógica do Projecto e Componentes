@@ -1,0 +1,32 @@
+//Componentes do Projecto
+Tela TFT ESP32-2432S028
+ESP32_WROOM COM ANTENA
+JST SH 1.25mm DE 4 CABOS
+MÓDULO PARA BATERIA- Bateria de Lítio ICR18650
+MÓDULO CARREGADOR DE BATERIA TP4056
+SWITCH ON-OFF
+CONVERSOR BOOST DC PARA DC STEP UP MT3608
+2 MÓDULO CONVERSOR DE CORRENTE DE 4-20mA PARA TENSÃO 0-5V HW-685
+SENSORES INDUSTRIAIS: Sensor de Temperatura e Sendor Pick Up Magnético MSP679 ou 
+Sensores: Sensores de Corrente SCT013 50A/1V e ACS712, Sensor de Tensão ZMPT101B e Sensor de Temperatura DS18B20.
+Módulo Relé de 4 Canais
+Contactores, Fios, Conectores, Caixas de Derivação, pistola de Cola Quente...
+Lógica de Programação pretendida
+1. Incluir bibliotecas e arquivos necessárias para a comunicação entre os ESPs e o tratamento dos valores recolhidos pelos sensores();
+2. Definir os pinos do relé, para acionar e desligar o gerador, e dos sensores para o sistema.
+3. Criar o caminho para conexão dos ESPs.
+4. Criar variáveis booleanas para definir o modo de acionamento do gerador (Automático ou Manual) em função dos eventos Enviados pelos Displays ;
+5. No modo Automático o sensor de corrente ACS712 deve ser capaz de transmitir que há ausência da Rede e ligar o gerador sem realizar a comutação para a carga;
+6. No modo manual o sistema deve aguardar que o Botão no Display seja acionado para arrancar o gerador.
+7. Independentemente do Modo de Funcionamento, após a ligação do Gerador um Array será criado com os Parâmetros do Gerador a serem Monitorados, recebidos em Bytes se possível, para Temperatura e RPM da máquina e talvez também Tensão e Corrente se facilitar o monitoramento, bem como um botão para desligar o Gerador quando imperativo.
+8. Após tratados os dados e enviados no Dispalay este deve ser Capaz de exibir numericamente estes valores;
+9. De seguida sempre que houver um clique sobre cada valor, o gráfico do respectivo Parâmetro deve ser indicado em pelo menos dois tipos de gráficos.
+10. A comutação para a carga a ser Alimentada pelo Gerador só deve ocorrer após o momento transitório da máquina, que devem ser verificados e definidos durantes os ensaios;
+11. Quando o botão para desligar for acionado ou o sensor ACS712 indicar que há Energia da rede, o sistema deve comutar a alimentação da carga para a rede e aguardar por algum tempo para desligar o Gerador, com vista a preservação da máquina;
+12. O circuito da  chave de transferência será composta por contactores que serão controlados pelos Relés conectados no sistema.
+13. No caso de anomalias no sistema um alerta sonoro deve ser emitido, do modo que após 2-5min se nenhuma acção for realizada e as anomalias continuarem a ser registradas o sistema deve cortar a alimentação para a carga e de seguida desligar o gerador.
+...
+---
+Algumas partes das ideias ainda estão confusas por falta de alguns conhecimentos mas este é o resumo do que se pretende no final do trabalho. 
+Photopea - design
+Escalidraw- esboço e mandar para o GitHub
